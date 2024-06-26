@@ -36,7 +36,7 @@ def LoginPage(request):
       login(request,user)
       return redirect('home')
     else:
-      return HttpResponse("user name and password is incurract")
+      return HttpResponse("user name and password is not RIGHT")
     print(uname, pass1)
   return render(request,'login.html')
 

@@ -5,27 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .form-container {
+      border: 1px solid #ced4da;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <h3>SignUp</h3>
+  <div class="container align-center">
+    <h3 class="text-center my-4">Sign Up</h3>
+    <div class="form-container">
+      <form action="#" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" id="username" name="username" class="form-control" placeholder="Create user name (Only letter and number)" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+        </div>
+        <div class="mb-3">
+          <label for="pass1" class="form-label">Password</label>
+          <input type="password" id="pass1" name="pass1" class="form-control" placeholder="Create a password" required>
+        </div>
+        <div class="mb-3">
+          <label for="pass2" class="form-label">Confirm your password</label>
+          <input type="password" id="pass2" name="pass2" class="form-control" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        <div class="text-center mt-3">
+          <a href="{% url 'login' %}">I already have an account</a>
+        </div>
+      </form>
+    </div>
+  </div>
 
-  <form action="#" method="post">
-    {% csrf_token %}
-    <label for="">Username</label>
-    <input type="text" id="username" name="username" placeholder="Create user name(Only letter and number)" required>
-    <br>
-    <label for="">Email Adress</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-    <br>
-    <label for="">Password</label>
-    <input type="password" id="pass1" name="pass1" placeholder="Create a password" required>
-    <br>
-    <label for="">Conferm your password</label>
-    <input type="password" id="pass2" name="pass2" placeholder="Confirm a password" required>
-    <button type="submit">Sign Up</button>
-
-    <a href="{% url 'login' %}">i have already account</a>
-  </form>
-  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlG0KJZtA8W49WjAtxK3o6AxZl+PpJtI6T/LvPYgKjauK2Fjkl1dYLmbl5v" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVK/XB7rEzMU/zaP2z4SpVRa2FxPKfVi6j6W4U26Vf0HJ4GQvsez8VDd5dIx7L0L" crossorigin="anonymous"></script>
 </body>
 </html>
