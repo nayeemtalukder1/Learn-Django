@@ -1,0 +1,6 @@
+<form action="" method="post">
+  {% csrf_token %}
+  {{form}}
+  <button type="submit">Save profile</button>
+  <a href="{% url 'address' %}">Back</a>
+</form>

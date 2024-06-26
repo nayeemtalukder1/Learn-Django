@@ -1,0 +1,14 @@
+<div>
+
+{% for ad in add %}
+  <h3>Address: {{forloop.counter}}</h3>
+  <p>Name: {{ad.name}}</p>
+  <p>Locality: {{ad.locality}}</p>
+  <p>Mobile: {{ad.mobile}}</p>
+  <a href="{% url 'updateaddress' pk=ad.id %}">Update</a>
+{% endfor %}
+
+  
+
+
+</div>
